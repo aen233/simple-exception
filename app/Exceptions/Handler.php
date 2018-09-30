@@ -47,14 +47,15 @@ class Handler extends ExceptionHandler
      * @param Exception                $exception
      *
      * @return \Illuminate\Http\Response|\Symfony\Component\HttpFoundation\Response
-     * @throws CodeException
+     * @throws BaseException
      */
     public function render($request, Exception $exception)
     {
         if ($exception instanceof ValidationException) {
             $message = current(current(array_values($exception->errors())));
-            throw new CodeException($message);
+            throw new BaseException($message, 4022);
         }
+
         return parent::render($request, $exception);
     }
 }
