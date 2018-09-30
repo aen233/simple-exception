@@ -124,7 +124,7 @@ Status: 500 Internal Server Error
 }
 ````
 ##### 6.1.2 参数校验异常
-使用laravel内置的ValidationException
+使用laravel内置的ValidationException  
 1.在app/Exceptions/Handler中添加
 ```php
  public function render($request, Exception $exception)
