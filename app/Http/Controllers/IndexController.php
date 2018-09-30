@@ -17,13 +17,12 @@ class IndexController extends Controller
     public function index(Request $request)
     {
         Validator::make($request->all(), [
-            'abc' => 'required',
-//            'file' => 'bail|required|file'
+            'file' => 'bail|required|file'
         ], [
-//            'file.required' => '请上传文件'
+            'file.required' => '请上传文件'
         ])->validate();
 
 //        throw new CodeException(1001);
-        throw new BaseException('abc', 1256);
+//        throw new BaseException('abc', 1256);
     }
 }
